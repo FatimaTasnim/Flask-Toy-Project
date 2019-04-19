@@ -84,7 +84,29 @@ def home():
 ## Template Inheritance
 To ignore changing each and every pages for a specific part should use a layout file so if any change needed only changing the layout page will do.
 
+1. make a new page layout.html
+2. and the common code lines to the page
+3. add block where changes required for different pages 
+```html 
+<body>
+    {% block content %}{% endblock %}
+</body>
+```
+4. Change the previous files like the following one
+```html
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Hey!</h1>
+{% endblock content%}
+```
+5. can also add bootstrap in layout page.
 
-### Learing Buffer
+## Adding CSS
+- CSS files need to be kept in a static folder named "static"
+- add new css file to that folder.
+- to add this css file to layout need to use a flask function - url_for. This function will found the exact location of the routes so no need to worry about it in background. 
+- import the url_for function in main.py(flaskblog.py) file.
+- 
+### Learning Buffer
 - Route Decorator
 - 
